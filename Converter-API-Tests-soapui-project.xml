@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="bb915e4f-fcac-46a4-96f1-7eb688fbcb55" activeEnvironment="Default" name="Converter-Api-Test" resourceRoot="${projectDir}" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="b3edbe88-6ab0-4f4e-9dbd-7531857b6e9e" wsaVersion="NONE" name="ConverterPortSoap11" type="wsdl" bindingName="{http://spring.io/guides/gs-producing-web-service}ConverterPortSoap11" soapVersion="1_1" anonymous="optional" definition="../converter.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="file:\C:\Users\niko_\Desktop\converter.wsdl">
+      <con:part>
+        <con:url>file:\C:\Users\niko_\Desktop\converter.wsdl</con:url>
+        <con:content><![CDATA[<wsdl:definitions targetNamespace="http://spring.io/guides/gs-producing-web-service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://spring.io/guides/gs-producing-web-service" xmlns:sch="http://spring.io/guides/gs-producing-web-service" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://spring.io/guides/gs-producing-web-service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="distanceInKmRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="distanceInMiles" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="distanceInKmResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="distanceInKm" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="distanceInMilesRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="distanceInKm" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="distanceInMilesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="distanceInMiles" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="distanceInMilesResponse">
+    <wsdl:part name="distanceInMilesResponse" element="tns:distanceInMilesResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="distanceInMilesRequest">
+    <wsdl:part name="distanceInMilesRequest" element="tns:distanceInMilesRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="distanceInKmResponse">
+    <wsdl:part name="distanceInKmResponse" element="tns:distanceInKmResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="distanceInKmRequest">
+    <wsdl:part name="distanceInKmRequest" element="tns:distanceInKmRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ConverterPort">
+    <wsdl:operation name="distanceInMiles">
+      <wsdl:input name="distanceInMilesRequest" message="tns:distanceInMilesRequest"></wsdl:input>
+      <wsdl:output name="distanceInMilesResponse" message="tns:distanceInMilesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="distanceInKm">
+      <wsdl:input name="distanceInKmRequest" message="tns:distanceInKmRequest"></wsdl:input>
+      <wsdl:output name="distanceInKmResponse" message="tns:distanceInKmResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConverterPortSoap11" type="tns:ConverterPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="distanceInMiles">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="distanceInMilesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="distanceInMilesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="distanceInKm">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="distanceInKmRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="distanceInKmResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConverterPortService">
+    <wsdl:port name="ConverterPortSoap11" binding="tns:ConverterPortSoap11">
+      <soap:address location="http://192.168.0.103:8281/converter/1.0.0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content>
+        <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>http://192.168.0.103:8281/converter/1.0.0</con:endpoint>
+    </con:endpoints>
+    <con:operation id="ccf94096-54ec-4645-b974-3df6fb2605a5" isOneWay="false" action="" name="distanceInKm" bindingOperationName="distanceInKm" type="Request-Response" outputName="distanceInKmResponse" inputName="distanceInKmRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="aa5dd6b9-a1f1-4100-99a6-0e2e32c307ed" name="Request 1">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 0b0b3e6a-0ee5-3568-bf89-6c079077ec47" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://192.168.0.103:8281/converter/1.0.0</con:endpoint>
+        <con:request><![CDATA[<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://spring.io/guides/gs-producing-web-service">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+    <ns2:distanceInKmRequest>
+            <distanceInMiles>1500.0</distanceInMiles>
+    </ns2:distanceInKmRequest>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://spring.io/guides/gs-producing-web-service/ConverterPort/distanceInKmRequest"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    </con:operation>
+    <con:operation id="827933c8-2ca1-4fb8-abfc-ea2af004659e" isOneWay="false" action="" name="distanceInMiles" bindingOperationName="distanceInMiles" type="Request-Response" outputName="distanceInMilesResponse" inputName="distanceInMilesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="8fb66aeb-1310-411f-9814-2163f9ad719b" name="Request 1">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 0b0b3e6a-0ee5-3568-bf89-6c079077ec47" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://192.168.0.103:8281/converter/1.0.0</con:endpoint>
+        <con:request><![CDATA[<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://spring.io/guides/gs-producing-web-service">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns2:distanceInMilesRequest>
+            <distanceInKm>3700</distanceInKm>
+        </ns2:distanceInMilesRequest>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://spring.io/guides/gs-producing-web-service/ConverterPort/distanceInMilesRequest"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    </con:operation>
+  </con:interface>
+  <con:testSuite id="886480fb-931d-4ca8-af2b-6aac5da5895b" name="ConverterPortSoap11 TestSuite">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="e3d4d288-e855-4691-bcda-2f1c0a4ac48d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="distanceInKm PositiveTestCase" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="f77a8052-c985-4692-bd74-f1cb2a1ebd8f" name="distanceInKm">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>ConverterPortSoap11</con:interface>
+          <con:operation>distanceInKm</con:operation>
+          <con:request name="distanceInKm" id="0313f126-b7b0-4d28-8e38-73eca8635f07">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 0b0b3e6a-0ee5-3568-bf89-6c079077ec47" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://192.168.0.103:8281/converter/1.0.0</con:endpoint>
+            <con:request><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://spring.io/guides/gs-producing-web-service">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns2:distanceInKmRequest>
+            <distanceInMiles>1500.0</distanceInMiles>
+        </ns2:distanceInKmRequest>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:request>
+            <con:assertion type="SOAP Fault Assertion" id="fb5d6ffb-be80-4a88-803b-729d6d11ae0f" name="Not SOAP Fault"/>
+            <con:assertion type="XPath Match" id="009a1095-d42c-437e-a660-646fb8c20ee5">
+              <con:configuration/>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="fb5d6ffb-be80-4a88-803b-729d6d11ae0f" name="Not SOAP Fault"/>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://spring.io/guides/gs-producing-web-service/ConverterPort/distanceInKmRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="f96d6219-16f5-4c7d-baef-0fcf8df9f13c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="distanceInMiles PositiveTestCase" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="0adbfb41-5d06-4325-b46f-fd34ea76d494" name="distanceInMiles">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>ConverterPortSoap11</con:interface>
+          <con:operation>distanceInMiles</con:operation>
+          <con:request name="distanceInMiles" id="82ee7ab5-c1ce-440a-ba23-e9b41de76549">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 0b0b3e6a-0ee5-3568-bf89-6c079077ec47" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://192.168.0.103:8281/converter/1.0.0</con:endpoint>
+            <con:request><![CDATA[<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://spring.io/guides/gs-producing-web-service">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns2:distanceInMilesRequest>
+            <distanceInKm>10</distanceInKm>
+        </ns2:distanceInMilesRequest>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:request>
+            <con:assertion type="SOAP Fault Assertion" id="442fab6f-eaa7-4640-9af0-bb4a8b840335" name="Not SOAP Fault"/>
+            <con:assertion type="XPath Match" id="3d96074a-c621-4c0a-b2f9-73ea53f3e234" name="VerifyCorrectResult">
+              <con:configuration>
+                <path>declare  namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare  namespace  ns2='http://spring.io/guides/gs-producing-web-service';
+declare  namespace  ns3='http://spring.io/guides/gs-producing-web-service';
+
+/SOAP-ENV:Envelope/SOAP-ENV:Body/ns3:distanceInMilesResponse/distanceInMiles/text()</path>
+                <content>6.2137119210</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://spring.io/guides/gs-producing-web-service/ConverterPort/distanceInMilesRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="f113295b-04af-4c4b-91bf-712ec4e89b3a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="distanceInKm InvalidInputTestCase" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="dce6e9e9-55b9-46c7-a180-6f453fe7d64d" name="distanceInKm">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>ConverterPortSoap11</con:interface>
+          <con:operation>distanceInKm</con:operation>
+          <con:request name="distanceInKm" id="0313f126-b7b0-4d28-8e38-73eca8635f07">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 0b0b3e6a-0ee5-3568-bf89-6c079077ec47" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://192.168.0.103:8281/converter/1.0.0</con:endpoint>
+            <con:request><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://spring.io/guides/gs-producing-web-service">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns2:distanceInKmRequest>
+            <distanceInMiles>-1500.0</distanceInMiles>
+        </ns2:distanceInKmRequest>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:request>
+            <con:assertion type="Not SOAP Fault Assertion" id="e3d7c1d3-ca26-4372-8d5b-515858c8fe92" name="SOAP Fault"/>
+            <con:assertion type="XPath Match" id="a2c7198a-b01b-460f-a136-dc06357bf212" name="VerifyFaultMessage">
+              <con:configuration>
+                <path>declare  namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare  namespace  ns2='http://spring.io/guides/gs-producing-web-service';
+declare  namespace  ns3='http://spring.io/guides/gs-producing-web-service';
+/SOAP-ENV:Envelope/SOAP-ENV:Body/SOAP-ENV:Fault/faultstring/text()</path>
+                <content>Distance cannot be negative!</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://spring.io/guides/gs-producing-web-service/ConverterPort/distanceInKmRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="2d60d9fe-e43b-4c39-b9f6-c1eccef6c460" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="distanceInMiles InvalidInputTestCase" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="request" id="9ab87a31-83d7-4ab5-8f1f-19c593748774" name="distanceInMiles">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>ConverterPortSoap11</con:interface>
+          <con:operation>distanceInMiles</con:operation>
+          <con:request name="distanceInMiles" id="82ee7ab5-c1ce-440a-ba23-e9b41de76549">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer 0b0b3e6a-0ee5-3568-bf89-6c079077ec47" xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://192.168.0.103:8281/converter/1.0.0</con:endpoint>
+            <con:request><![CDATA[<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://spring.io/guides/gs-producing-web-service">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns2:distanceInMilesRequest>
+            <distanceInKm>-10</distanceInKm>
+        </ns2:distanceInMilesRequest>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:request>
+            <con:assertion type="Not SOAP Fault Assertion" id="8943c8c3-3a1c-4eee-88a2-8434379bf4dc" name="SOAP Fault"/>
+            <con:assertion type="XPath Match" id="3d96074a-c621-4c0a-b2f9-73ea53f3e234" name="VerifyCorrectResult">
+              <con:configuration>
+                <path>declare  namespace SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/';
+declare  namespace  ns2='http://spring.io/guides/gs-producing-web-service';
+declare  namespace  ns3='http://spring.io/guides/gs-producing-web-service';
+/SOAP-ENV:Envelope/SOAP-ENV:Body/SOAP-ENV:Fault/faultstring/text()</path>
+                <content>Distance cannot be negative!</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig action="http://spring.io/guides/gs-producing-web-service/ConverterPort/distanceInMilesRequest" mustUnderstand="NONE" version="200508"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:properties/>
+  </con:testSuite>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+</con:soapui-project>
